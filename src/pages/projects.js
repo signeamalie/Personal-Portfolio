@@ -8,23 +8,23 @@ export function renderProjects(root = "#app"){
   // data til projektkort (titel, meta, beskrivelse, billede, link)
   const list = [
     {
-      title: "eksamensprojekt: udvikling af alkoholfri ølkoncept",
+      title: "Eksamensprojekt: Udvikling af alkoholfri ølkoncept",
       meta:  "1. semester | 2024",
-      desc:  "udvikling af visuelt udtryk og ux-flow for et alkoholfrit ølbrand.",
+      desc:  "Udvikling af visuelt udtryk og UX-flow for et alkoholfrit ølbrand.",
       img:   "assets/images/desktopzerobuzz.png",
       href:  "projectdetail.html?id=zerobuzz-brew"
     },
     {
-      title: "real life project: konceptudvikling for eksisterende brand",
+      title: "Real life project: Konceptudvikling for eksisterende brand",
       meta:  "2. semester | 2025",
-      desc:  "koncept, ui-komponenter og mockups for e-commerce.",
+      desc:  "Koncept, UI-komponenter og mockups for e-commerce.",
       img:   "assets/images/desktopbasicmore.png",
       href:  "projectdetail.html?id=basic-and-more"
     },
     {
-      title: "brand identitet: makeover af eksisterende tøjbrand",
+      title: "Brand identitet: Makeover af eksisterende tøjbrand",
       meta:  "1. semester | 2024",
-      desc:  "rebranding, typografi og billedstil.",
+      desc:  "Rebranding, typografi og billedstil.",
       img:   "assets/images/desktoppitaya.png",
       href:  "projectdetail.html?id=brand-identity"
     },
@@ -35,7 +35,7 @@ export function renderProjects(root = "#app"){
     <section class="projects-two-col">
       <div class="projects-intro">
         <h1>udvalgte projekter</h1>
-        <p>her får du et indblik i udvalgte projekter. tryk på <strong>“vis mere”</strong> og
+        <p>Her får du et indblik i udvalgte projekter. Tryk på <strong>“vis mere”</strong> og
         find ud af hvordan processen førte til det endelige produkt.</p>
       </div>
 

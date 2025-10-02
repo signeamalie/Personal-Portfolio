@@ -1,0 +1,73 @@
+// basis-variabler
+$btn-bg: var(--text) !default;
+$btn-fg: var(--white) !default;
+$btn-radius: 0 !default;
+$btn-py: 6px !default;
+$btn-px: 28px !default;
+$btn-font: var(--fs-600) !default;
+$btn-weight: 700 !default;
+$btn-shadow: 0 6px 14px rgba(0,0,0,.08) !default;
+$btn-raise: 2px !default;
+
+// base-mixin
+@mixin btn-base($bg: $btn-bg, $fg: $btn-fg){
+  display: inline-block;
+  background: $bg;
+  color: $fg;
+  text-decoration: none;
+  padding: $btn-py $btn-px;
+  border-radius: $btn-radius;
+  font-weight: $btn-weight;
+  font-size: $btn-font;
+  box-shadow: $btn-shadow;
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+  width: max-content;
+}
+
+// solid
+.btn{ @include btn-base(); }
+
+// outline
+.btn-outline{
+  @include btn-base(transparent, var(--text));
+  border: 2px solid var(--text);
+  box-shadow: none;
+}
+
+// cta over showcase billede
+.btn-cta{
+  @include btn-base();
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+.btn-cta:hover,
+.btn-cta:focus-visible{
+  transform: translate(-50%, -50%);
+}
+
+// hover-effekt for alle undtagen CTA
+.btn:not(.btn-cta):hover,
+.btn:not(.btn-cta):focus-visible{
+  transform: translateY(-#{$btn-raise});
+  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+  outline: none;
+}
+
+// størrelser
+.btn--sm{ padding: 4px 16px; font-size: clamp(14px,1.4vw,16px); }
+.btn--lg{ padding: 10px 32px; font-size: clamp(17px,2vw,20px); }
+
+// layout-hjælpere
+.btn--block{ width:100%; display:inline-flex; justify-content:center; }
+.btn--left { justify-self: start; }
+.btn--center{ justify-self: center; }
+
+// farve-varianter
+.btn--muted{ @include btn-base(var(--muted), var(--white)); }
+.btn--light{
+  @include btn-base(var(--white), var(--text));
+  border: 2px solid var(--text);
+}

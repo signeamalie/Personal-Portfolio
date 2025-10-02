@@ -30,6 +30,126 @@
   --img-max-h: 720px;
 }
 
+/* import knapper (bruger _buttons.scss mixins/klasser) */
+.btn {
+  display: inline-block;
+  background: var(--text);
+  color: var(--white);
+  text-decoration: none;
+  padding: 6px 28px;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: var(--fs-600);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--text);
+  text-decoration: none;
+  padding: 6px 28px;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: var(--fs-600);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  width: -moz-max-content;
+  width: max-content;
+  border: 2px solid var(--text);
+  box-shadow: none;
+}
+
+.btn-cta {
+  display: inline-block;
+  background: var(--text);
+  color: var(--white);
+  text-decoration: none;
+  padding: 6px 28px;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: var(--fs-600);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.btn-cta:hover,
+.btn-cta:focus-visible {
+  transform: translate(-50%, -50%);
+}
+
+.btn:not(.btn-cta):hover,
+.btn:not(.btn-cta):focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  outline: none;
+}
+
+.btn--sm {
+  padding: 4px 16px;
+  font-size: clamp(14px, 1.4vw, 16px);
+}
+
+.btn--lg {
+  padding: 10px 32px;
+  font-size: clamp(17px, 2vw, 20px);
+}
+
+.btn--block {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.btn--left {
+  justify-self: start;
+}
+
+.btn--center {
+  justify-self: center;
+}
+
+.btn--muted {
+  display: inline-block;
+  background: var(--muted);
+  color: var(--white);
+  text-decoration: none;
+  padding: 6px 28px;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: var(--fs-600);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.btn--light {
+  display: inline-block;
+  background: var(--white);
+  color: var(--text);
+  text-decoration: none;
+  padding: 6px 28px;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: var(--fs-600);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  width: -moz-max-content;
+  width: max-content;
+  border: 2px solid var(--text);
+}
+
 /*base*/
 * {
   box-sizing: border-box;
@@ -84,6 +204,7 @@ img {
   width: auto;
 }
 
+/* desktop: vandret menu */
 .menu {
   display: flex;
   justify-content: center;
@@ -108,13 +229,12 @@ img {
   outline: none;
 }
 
-/* aktiv side */
 .menu a.is-active {
   text-decoration: underline;
   text-underline-offset: 6px;
 }
 
-/* skjul spacer og burger som udgangspunkt (desktop) */
+/* burger / drawer (skjult på desktop) */
 .nav-pad {
   display: none;
 }
@@ -132,13 +252,6 @@ img {
 .burger i {
   font-size: 22px;
   color: var(--text);
-}
-
-/* desktop: vandret menu som før */
-.menu {
-  display: flex;
-  justify-content: center;
-  gap: clamp(40px, 6vw, 110px);
 }
 
 /* mobil layout: 3 kolonner (spacer | logo | burger) og drawer fra højre */
@@ -161,7 +274,6 @@ img {
   .burger {
     display: inline-flex;
   }
-  /* højre side-drawer */
   .menu {
     position: fixed;
     inset: 0 0 0 auto;
@@ -183,7 +295,6 @@ img {
   .menu a {
     font-size: clamp(18px, 5vw, 22px);
   }
-  /* overlay bag drawer */
   .menu-backdrop {
     position: fixed;
     inset: 0;
@@ -204,7 +315,7 @@ body.no-scroll {
 /* logo autoskalerer på mindre skærme */
 @media (max-width: 900px) {
   :root {
-    --logo-size: 80x;
+    --logo-size: 80px;
   }
 }
 @media (max-width: 540px) {
@@ -241,13 +352,12 @@ body.no-scroll {
 }
 
 .intro h1 {
-  font-size: clamp(28px, 4.8vw, 56px);
+  font-size: clamp(22px, 3.8vw, 45px);
   line-height: var(--lh-tight);
   margin: 0;
   font-weight: 800;
 }
 
-/* gør lead robust uanset om der bruges <li> eller bare tekst */
 .lead {
   list-style: none;
   padding: 0;
@@ -278,7 +388,7 @@ body.no-scroll {
   grid-template-columns: 1fr 1fr;
   gap: var(--space-3);
   align-content: start;
-  margin-top: var(--showcase-offset);
+  margin-top: calc(var(--showcase-offset) + var(--showcase-lift));
   width: var(--showcase-width);
   justify-self: end;
   transform: translateX(var(--showcase-nudge));
@@ -294,50 +404,7 @@ body.no-scroll {
   opacity: 0.7;
 }
 
-.btn-cta {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  white-space: nowrap;
-  border-radius: 0;
-}
-
-/*knapper*/
-.btn {
-  display: inline-block;
-  background: var(--text);
-  color: var(--white);
-  text-decoration: none;
-  padding: 6px 28px;
-  border-radius: 0;
-  font-weight: 700;
-  font-size: var(--fs-600);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
-  width: -moz-max-content;
-  width: max-content;
-}
-
-.btn:hover,
-.btn:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-  outline: none;
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--text);
-  border: 2px solid var(--text);
-}
-
-.btn-outline:hover,
-.btn-outline:focus-visible {
-  background: var(--text);
-  color: var(--white);
-}
-
-/*generiske side-containere*/
+/* generiske side-containere */
 .page,
 .projects-two-col,
 .contact-page,
@@ -347,7 +414,7 @@ body.no-scroll {
   padding: var(--space-5);
 }
 
-/*projects – to kolonner*/
+/*projects opdelt i to kolonner*/
 .projects-two-col {
   display: grid;
   grid-template-columns: minmax(280px, 0.9fr) minmax(640px, 1.6fr);
@@ -464,6 +531,7 @@ body.no-scroll {
   .home {
     grid-template-columns: 1fr;
   }
+  /* cta: under billederne og centreret på mobil */
   .btn-cta {
     position: static;
     transform: none;
@@ -491,5 +559,9 @@ body.no-scroll {
   .project-card {
     grid-template-columns: 1fr;
     min-height: clamp(200px, 48vw, 320px);
+  }
+  .project-card .btn {
+    justify-self: center;
+    margin-left: 0;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -14,9 +14,9 @@ export function renderHome(rootSelector = "#app") {
 
         <!-- kompetencer som kort lead-tekst -->
         <ul class="lead">
-          html | css/scss | javascript
+          HTML | CSS/SCSS | JavaScript
           <br />
-          ai-specialist | ux/ui | seo-optimering
+          AI-specialist | UX/UI | SEO-optimering
         </ul>
 
         <!-- primær call to action -->
