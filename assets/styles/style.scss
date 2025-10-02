@@ -2,7 +2,7 @@
    :root{
     --bg:#F9FFDE;
     --text:#006633;
-    --muted:#006633;
+    --muted:#006633d4;
     --white:#ffffff;
   
     --radius:16px;
@@ -87,6 +87,88 @@
   .menu a:focus-visible{ transform:translateY(-2px); opacity:1; outline:none; }
   /* aktiv side */
   .menu a.is-active{ text-decoration:underline; text-underline-offset:6px; }
+
+  /* skjul spacer og burger som udgangspunkt (desktop) */
+.nav-pad{ display:none; }
+.burger{
+  display:none;
+  border:0;
+  background:transparent;
+  padding:8px 10px;
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+}
+.burger i{
+  font-size:22px;
+  color:var(--text);
+}
+
+/* desktop: vandret menu som før */
+.menu{
+  display:flex;
+  justify-content:center;
+  gap:clamp(40px, 6vw, 110px);
+}
+
+/* mobil layout: 3 kolonner (spacer | logo | burger) og drawer fra højre */
+@media (max-width: 900px){
+  .site-nav{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:var(--space-2);
+    padding:var(--space-3);
+  }
+  .logo{ justify-self:center; }
+  .nav-pad{
+    display:block;
+    width:var(--logo-size);
+    height:1px;
+  }
+  .burger{ display:inline-flex; }
+
+  /* højre side-drawer */
+  .menu{
+    position:fixed;
+    inset:0 0 0 auto;
+    width:min(300px, 82vw);
+    height:100dvh;
+    background:var(--bg);
+    padding:var(--space-5) var(--space-4);
+    display:grid;
+    align-content:start;
+    gap:var(--space-4);
+    transform:translateX(100%);
+    transition:transform .25s ease;
+    box-shadow:-14px 0 24px rgba(0,0,0,.12);
+    z-index:1000;
+  }
+  .menu.is-open{ transform:translateX(0); }
+  .menu a{ font-size:clamp(18px, 5vw, 22px); }
+
+  /* overlay bag drawer */
+  .menu-backdrop{
+    position:fixed; inset:0;
+    background:rgba(0,0,0,.28);
+    backdrop-filter:blur(1px);
+    z-index:999;
+  }
+  .menu-backdrop[hidden]{ display:none; }
+}
+
+/* lås scroll når menu er åben */
+body.no-scroll{ overflow:hidden; }
+
+/* logo autoskalerer på mindre skærme */
+@media (max-width: 900px){ :root{ --logo-size: 80x; } }
+@media (max-width: 540px){ :root{ --logo-size: 75px; } }
+.logo img{
+  height:var(--logo-size);
+  width:auto;
+  display:block;
+}
+
   
   /* landing: to kolonner*/
   .home{
@@ -293,7 +375,7 @@
       height:clamp(320px, 60vw, 600px);
     }
   }
-  
+
   @media (max-width:760px){
     .projects-two-col{
       grid-template-columns:1fr;
