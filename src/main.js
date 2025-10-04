@@ -3,12 +3,15 @@
 // navigation komponent
 import { createNavbar }  from "./ui-components/Navbar.js";
 
+
 // sider der kan rendres
 import { renderHome }     from "./pages/home.js";
 import { renderAbout }    from "./pages/about.js";
 import { renderProjects } from "./pages/projects.js";
 import { renderSkills }   from "./pages/skills.js";
 import { renderContact }  from "./pages/contact.js";
+import { renderProjectDetailPage } from "./pages/projectDetailPage.js";
+
 
 // map: filnavn -> render-funktion
 const routes = {
@@ -17,15 +20,16 @@ const routes = {
   "projects.html": renderProjects,
   "skills.html": renderSkills,
   "contact.html": renderContact,
+  "projectdetail.html": renderProjectDetailPage,
 };
 
 // titler pr. side (til document.title)
 const titles = {
-  "": "saj | forside", "/": "saj | forside", "index.html": "saj | forside",
-  "about.html": "saj | om mig",
-  "projects.html": "saj | projekter",
-  "skills.html": "saj | kompetencer",
-  "contact.html": "saj | kontakt",
+  "": "SAJ | Forside", "/": "SAJ | Forside", "index.html": "SAJ | Forside",
+  "about.html": "SAJ | Om mig",
+  "projects.html": "SAJ | Projekter",
+  "skills.html": "SAJ | Kompetencer",
+  "contact.html": "SAJ | Kontakt",
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -39,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   (routes[current] || renderHome)("#app");
 
   // sæt sidetitel
-  document.title = titles[current] || "saj | portfolio";
+  document.title = titles[current] || "SAJ | Portfolio";
 
   // markér aktivt menupunkt i menuen
   document.querySelectorAll(".menu a").forEach(a => {

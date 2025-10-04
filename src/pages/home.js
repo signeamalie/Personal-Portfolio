@@ -26,7 +26,7 @@ export function renderHome(rootSelector = "#app") {
         <img class="portrait" src="assets/images/portrait.png" alt="portrait af signe" />
 
         <!-- sekundær call to action -->
-        <a class="btn" href="#contact">lad os komme i dialog</a>
+        <a class="btn" href="contact.html">lad os komme i dialog</a>
       </div>
 
       <!-- højre kolonne: to billeder + overlay-knap -->
