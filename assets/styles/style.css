@@ -407,7 +407,7 @@ body.no-scroll {
   -o-object-fit: contain;
      object-fit: contain;
   border-radius: 0;
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 /* generiske side-containere */

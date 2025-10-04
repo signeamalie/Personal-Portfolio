@@ -221,7 +221,7 @@ body.no-scroll{ overflow:hidden; }
   height:clamp(var(--img-min-h), var(--img-resp-h), var(--img-max-h));
   object-fit: contain;
   border-radius:0;
-  opacity:.7;
+  opacity:.5;
 }
 
 /* generiske side-containere */

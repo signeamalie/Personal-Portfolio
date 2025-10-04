@@ -31,8 +31,8 @@ export function renderHome(rootSelector = "#app") {
 
       <!-- højre kolonne: to billeder + overlay-knap -->
       <div class="showcase">
-        <img src="assets/images/zbhomepage.png" alt="projekt eksempel 1" />
-        <img src="assets/images/pitayahomepage.png" alt="projekt eksempel 2" />
+        <img src="assets/images/pitayahomepage.png" alt="projekt eksempel 1" />
+        <img src="assets/images/zbhomepage.png" alt="projekt eksempel 2" />
         <a class="btn btn-cta" href="projects.html">udforsk mine projekter</a>
       </div>
     </section>
