@@ -547,8 +547,9 @@ body.no-scroll {
   .btn-cta {
     position: static;
     transform: none;
+    grid-column: 1/-1;
     justify-self: center;
-    margin-top: var(--space-2);
+    margin-top: var(--space-3);
   }
   .menu {
     gap: clamp(18px, 5vw, 36px);

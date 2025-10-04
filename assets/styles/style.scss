@@ -311,10 +311,11 @@ body.no-scroll{ overflow:hidden; }
 
   /* cta: under billederne og centreret på mobil */
   .btn-cta{
-    position:static;
-    transform:none;
-    justify-self:center;
-    margin-top:var(--space-2);
+    position: static;
+    transform: none;
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: var(--space-3);
   }
 
   .menu{ gap:clamp(18px,5vw,36px); }
