@@ -15,7 +15,7 @@ export function renderProjects(root = "#app"){
       href:  "projectdetail.html?id=zerobuzz-brew",
       tags:  ["kodning","adobe","seo","dataindsamling"],
       featured: true,
-      badge: "Mit første eksamensprojekt - Karakter 10"
+      badge: "Første eksamensprojekt - Karakter 10"
     },
     {
       title: "Real life project: Konceptudvikling for eksisterende brand",
@@ -33,7 +33,7 @@ export function renderProjects(root = "#app"){
       img:   "assets/images/desktoppitaya.png",
       href:  "projectdetail.html?id=brand-identity",
       tags:  ["adobe","kodning"],
-       badge: "Min første designcase"
+       badge: "Første designcase"
     },
   ];
 
