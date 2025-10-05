@@ -13,11 +13,11 @@ export function renderHome(rootSelector = "#app") {
         <h1>signe | 25 år</h1>
 
         <!-- kompetencer som kort lead-tekst -->
-        <ul class="lead">
+        <p class="lead">
           HTML | CSS/SCSS | JavaScript
           <br />
           AI-specialist | UX/UI | SEO-optimering
-        </ul>
+        </p>
 
         <!-- primær call to action -->
         <a class="btn btn-outline" href="about.html">lær mig bedre at kende</a>

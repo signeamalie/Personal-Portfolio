@@ -1,12 +1,11 @@
 "use strict";
+import { SkillStore } from "../models/Skills.js";
 
-// bygger kompetence-siden (2 rækker: 3 + 2)
+// bygger kompetence-siden (2 rækker: 3 + 2) via OOUX-objekter
 export function renderSkills(root = "#app"){
   const el = document.querySelector(root);
 
-  // øverste række: 3 kort
-  // ikon = font awesome klasse
-  const skillsTop = [
+  const skillsTop = new SkillStore([
     {
       icon: "fa-solid fa-laptop-code",
       title: "Programmering",
@@ -15,17 +14,16 @@ export function renderSkills(root = "#app"){
     {
       icon: "fa-solid fa-user",
       title: "Dataindsamling & UX",
-      text: "Til dataindsamling er Google Trends og Keyword Planner en gamechanger for mig. Gennem research, interviews og analyser formår jeg derudover at skabe en solid base for den optimale brugeroplevelse. "
+      text: "Til dataindsamling er Google Trends og Keyword Planner en gamechanger for mig. Gennem research, interviews og analyser formår jeg derudover at skabe en solid base for den optimale brugeroplevelse."
     },
     {
       icon: "fa-solid fa-image",
       title: "Adobe Creative Cloud",
       text: "Jeg har meget erfaring med Adobe Photoshop og Illustrator, og en smule med After Effects. Jeg bruger dem, når der skal laves logo eller andet grafik."
     },
-  ];
+  ]);
 
-  // nederste række: 2 kort
-  const skillsBottom = [
+  const skillsBottom = new SkillStore([
     {
       icon: "fa-solid fa-robot",
       title: "AI-specialist",
@@ -36,39 +34,21 @@ export function renderSkills(root = "#app"){
       title: "SEO-optimering",
       text: "Værktøjer som Semrush, Google og Answerthepublic benyttes her til at identificere nøje udvalgte ord, baseret på performance og trafik."
     },
-  ];
+  ]);
 
-  // dom: skriver markup ind i #app
   el.innerHTML = `
     <section class="skills-page">
       <h1>kompetencer</h1>
 
-      <!-- wrapper med to rækker (top=3, bund=2) -->
       <div class="skills-rows">
         <div class="skills-row three">
-          ${skillsTop.map(card).join("")}
+          ${skillsTop.items.map(s => s.toCardHTML()).join("")}
         </div>
 
         <div class="skills-row two">
-          ${skillsBottom.map(card).join("")}
+          ${skillsBottom.items.map(s => s.toCardHTML()).join("")}
         </div>
       </div>
     </section>
   `;
-
-  // lille helper til at lave et kort fra data
-  function card(s){
-    return `
-      <article class="skill">
-        <!-- ikon fra font awesome -->
-        <div class="skill-icon">
-          <i class="${s.icon}" aria-hidden="true"></i>
-        </div>
-
-        <!-- titel + beskrivelse -->
-        <h3>${s.title}</h3>
-        <p>${s.text}</p>
-      </article>
-    `;
-  }
 }

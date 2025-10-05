@@ -1,4 +1,5 @@
 "use strict";
+import { ProjectStore } from "../models/Project.js";
 
 // renderer projektsiden (2 kolonner: intro + kortliste + filtrering)
 export function renderProjects(root = "#app"){
@@ -12,7 +13,9 @@ export function renderProjects(root = "#app"){
       desc:  "Udvikling af visuelt udtryk og UX-flow for et alkoholfrit ølbrand.",
       img:   "assets/images/desktopzerobuzz.png",
       href:  "projectdetail.html?id=zerobuzz-brew",
-      tags:  ["kodning","adobe","seo","dataindsamling"]
+      tags:  ["kodning","adobe","seo","dataindsamling"],
+      featured: true,
+      badge: "Mit første eksamensprojekt - Karakter 10"
     },
     {
       title: "Real life project: Konceptudvikling for eksisterende brand",
@@ -20,7 +23,8 @@ export function renderProjects(root = "#app"){
       desc:  "Koncept, UI-komponenter og mockups for e-commerce.",
       img:   "assets/images/desktopbasicmore.png",
       href:  "projectdetail.html?id=basic-and-more",
-      tags:  ["kodning","dataindsamling"]
+      tags:  ["kodning","dataindsamling"],
+      badge: "Real life samarbejde - Karakter 12"
     },
     {
       title: "Brand identitet: Makeover af eksisterende tøjbrand",
@@ -28,29 +32,15 @@ export function renderProjects(root = "#app"){
       desc:  "Rebranding, typografi og billedstil.",
       img:   "assets/images/desktoppitaya.png",
       href:  "projectdetail.html?id=brand-identity",
-      tags:  ["adobe","kodning"]
+      tags:  ["adobe","kodning"],
+       badge: "Min første designcase"
     },
   ];
 
   // faste filtre (rækkefølge bevidst)
   const filters = ["kodning","adobe","dataindsamling","seo"];
 
-  // helper: bygger ét kort
-  const card = (p) => `
-    <article class="project-card" role="listitem" data-tags="${(p.tags||[]).join(" ")}">
-      <div class="card-media">
-        <img loading="lazy" src="${p.img}" alt="${p.title}">
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">${p.title}</h3>
-        <small class="card-meta">${p.meta}</small>
-        <p class="card-desc">${p.desc}</p>
-        <a class="btn" href="${p.href}">vis mere</a>
-      </div>
-    </article>
-  `;
-
-  // render skelet
+  // render skelet (intro + filter + kortcontainer)
   el.innerHTML = `
     <section class="projects-two-col">
       <div class="projects-intro">
@@ -71,38 +61,41 @@ export function renderProjects(root = "#app"){
 
       <div class="project-stack" role="list"></div>
     </section>
-
   `;
-  // render kortliste
+
+
   const stack = el.querySelector(".project-stack");
-  const renderCards = (arr) => { stack.innerHTML = arr.map(card).join(""); };
-  renderCards(list);
+  const store = new ProjectStore(list);
+
+  // renderer en samling Project-objekter til kort
+  const renderCards = (items) => {
+    stack.innerHTML = items.map(p => p.toCardHTML()).join("");
+  };
+
+  // initial visning (alle projekter)
+  renderCards(store.items);
 
   // filtrering (klik = filtrér, klik igen = reset)
   let active = null; // ingen filter aktivt
   const btns = [...el.querySelectorAll(".filter-btn")];
 
   const applyFilter = (tag) => {
-    // tekstsøgning fallback (title+desc) udover tags
-    const filtered = list.filter(p =>
-      (p.tags && p.tags.includes(tag)) ||
-      (p.title + " " + p.desc).toLowerCase().includes(tag.toLowerCase())
-    );
-    renderCards(filtered);
+    renderCards(store.filterBy(tag));
   };
 
   btns.forEach(btn => {
     btn.addEventListener("click", () => {
       const tag = btn.dataset.tag;
 
-      // toggle logik
+      // toggle: klik på aktivt tag = nulstil
       if (active === tag) {
         active = null;
         btns.forEach(b => { b.classList.remove("is-active"); b.setAttribute("aria-pressed","false"); });
-        renderCards(list); // vis alle igen
+        renderCards(store.items);
         return;
       }
 
+      // sæt nyt aktivt tag
       active = tag;
       btns.forEach(b => {
         const on = b === btn;

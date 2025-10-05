@@ -14,7 +14,7 @@ export function renderContact(root = "#app") {
       </h1>
 
       <p class="contact-intro">
-        <br>Kom hurtigt i kontakt med mig via nedenstående kontaktformular. <br><br>Jeg kan altid fanges direkte på <strong>signeamaliejensen@gmail.com</strong></a>.
+        <br>Kom hurtigt i kontakt med mig via nedenstående kontaktformular. <br><br>Jeg kan altid fanges direkte på <strong>signeamaliejensen@gmail.com</strong>.
       </p>
 
       <form id="contact-form" class="contact-form" novalidate>

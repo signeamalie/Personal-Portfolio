@@ -95,7 +95,7 @@ img{ display:block; max-width:100%; height:auto; }
   transition:transform .15s ease, opacity .15s ease;
 }
 .menu a:hover,
-.menu a:focus-visible{ transform:translateY(-2px); opacity:1; outline:none; }
+.menu a:focus-visible{ transform:translateY(-2px); opacity:1; }
 .menu a.is-active{ text-decoration:underline; text-underline-offset:6px; }
 
 /* burger / drawer (skjult på desktop) */
@@ -161,7 +161,6 @@ body.no-scroll{ overflow:hidden; }
 /* logo autoskalerer på mindre skærme */
 @media (max-width: 900px){ :root{ --logo-size: 80px; } }
 @media (max-width: 540px){ :root{ --logo-size: 75px; } }
-.logo img{ height:var(--logo-size); width:auto; display:block; }
 
 /* landing: to kolonner*/
 .home{
@@ -191,8 +190,7 @@ body.no-scroll{ overflow:hidden; }
   margin:0;
   font-weight:800;
 }
-.lead{ list-style:none; padding:0; margin:0; font-size:var(--fs-600); }
-.lead li{ font-size:var(--fs-600); }
+
 .portrait{
   width:210px;
   border-radius:0;
@@ -263,7 +261,6 @@ body.no-scroll{ overflow:hidden; }
   width:100%; height:100%;
   object-fit:cover;
   display:block;
-  opacity:.85;
 }
 .card-body{
   padding:var(--space-3);
@@ -287,7 +284,24 @@ body.no-scroll{ overflow:hidden; }
   border-color: var(--text);
 }
 
+/* badge på projektkort */
+.card-badge{
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  background: var(--text);
+  color: var(--white);
+  padding: 4px 10px;
+  font-weight: 800;
+  font-size: clamp(12px, 1.2vw, 13px);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  box-shadow: var(--shadow);
+}
+
 /*contact*/
+.lead {margin: 0;
+font-size: var(--fs-600);}
 .contact-page h1{ margin:0 0 var(--space-3) 0; }
 .contact-lead{ margin:0 0 var(--space-4) 0; }
 .contact-grid{
@@ -614,6 +628,19 @@ body.no-scroll{ overflow:hidden; }
   font-size: 22px;
   line-height: 1;
   color: #0A66C2;
+}
+
+/* skjul visuelt, behold for skærmlæsere */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; 
+  height: 1px; 
+  padding: 0; 
+  margin: -1px; 
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* bred skærm: skub intro + linkedin så de starter hvor formularen starter */

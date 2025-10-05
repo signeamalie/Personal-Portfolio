@@ -66,6 +66,6 @@ export function createNavbar(){
   backdrop.addEventListener("click", closeMenu);
   el.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
 
-  // returnerer et dom-element klar til at blive indsat i headeren
+  // returnér selve nav-elementet, så main.js kan indsætte det i headeren
   return el;
 }

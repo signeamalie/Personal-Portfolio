@@ -36,10 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // indsæt navigation i header
   document.querySelector("#site-header").appendChild(createNavbar());
 
-  // find nuværende filnavn
+  // find nuværende side ud fra URL-stien
   const current = location.pathname.split("/").pop() || "/";
 
-  // render den rigtige side (fallback = forside)
+  // render den rigtige side (standard = forside)
   (routes[current] || renderHome)("#app");
 
   // sæt sidetitel
@@ -47,10 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // markér aktivt menupunkt i menuen
   document.querySelectorAll(".menu a").forEach(a => {
-    const isActive = a.getAttribute("href") === (current || "index.html");
+    const isActive = a.getAttribute("href") === current;
     a.classList.toggle("is-active", isActive);
     a.toggleAttribute("aria-current", isActive);
   });
+
 
   // rul til top ved ny side
   window.scrollTo({ top: 0 });
