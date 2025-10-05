@@ -8,18 +8,18 @@ export function renderSkills(root = "#app"){
   const skillsTop = new SkillStore([
     {
       icon: "fa-solid fa-laptop-code",
-      title: "Programmering",
-      text: "HTML, CSS/SCSS, JavaScript.<br>Jeg bruger Visual Studio Code til at kode og benytter mig af Github. Det er vigtigt for mig at skrive semantisk korrekt og tilgængelig kode."
+      title: "Front-end udvikling",
+      text: "Jeg arbejder med HTML, CSS/SCSS og JavaScript - og har fokus på at skrive semantisk korrekt og tilgængelig kode. I mit arbejde bruger jeg Visual Studio Code og GitHub, hvor jeg strukturerer projekter med moderne metoder som OOP og modulær opbygning for at skabe overskuelig og skalerbar front-end kode."
     },
     {
       icon: "fa-solid fa-user",
       title: "Dataindsamling & UX",
-      text: "Til dataindsamling er Google Trends og Keyword Planner en gamechanger for mig. Gennem research, interviews og analyser formår jeg derudover at skabe en solid base for den optimale brugeroplevelse."
+      text: "Jeg bruger værktøjer som Google Trends og Keyword Planner til at indsamle og analysere data, der danner grundlag for stærke UX-beslutninger. Gennem research, interviews og analyser skaber jeg indsigt i brugeradfærd, som sikrer designløsninger med reel værdi for målgruppen."
     },
     {
       icon: "fa-solid fa-image",
       title: "Adobe Creative Cloud",
-      text: "Jeg har meget erfaring med Adobe Photoshop og Illustrator, og en smule med After Effects. Jeg bruger dem, når der skal laves logo eller andet grafik."
+      text: "Jeg har solid erfaring med Photoshop og Illustrator, som jeg bruger til alt fra logo- og branddesign til visuelle koncepter. Jeg arbejder desuden med After Effects til motion design og prototyper, når der skal skabes ekstra liv og identitet i digitale løsninger."
     },
   ]);
 
@@ -27,12 +27,12 @@ export function renderSkills(root = "#app"){
     {
       icon: "fa-solid fa-robot",
       title: "AI-specialist",
-      text: "Med et 12-tal i AI projekt - som involverede prompting strategier, Human in the Loop og GDPR - kan jeg være med til, at løfte jeres brug af AI uden at gå på kompromis med kvalitet eller autencitet."
+      text: "Med et 12-tal i mit AI-projekt har jeg arbejdet med prompting-strategier, Human in the Loop og GDPR i praksis. Jeg kan hjælpe med at integrere AI i arbejdsprocesser på en måde, der bevarer autenticitet, kvalitet og menneskelig kontrol."
     },
     {
       icon: "fa-solid fa-wifi",
       title: "SEO-optimering",
-      text: "Værktøjer som Semrush, Google og Answerthepublic benyttes her til at identificere nøje udvalgte ord, baseret på performance og trafik."
+      text: "Jeg arbejder strategisk med søgeordsanalyse via Semrush, Google og Answerthepublic for at styrke digital synlighed. Gennem datadrevne beslutninger optimerer jeg indhold og struktur, så websites performer bedre i både trafik og relevans."
     },
   ]);
 

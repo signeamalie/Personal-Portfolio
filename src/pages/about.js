@@ -74,7 +74,7 @@ export function renderAbout(root = "#app"){
         <div class="about-actions">
           <a
             class="btn btn--lg"
-            href="assets/docs/signe-amalie-jensen-cv.pdf"
+            href="assets/docs/CV_Signe_Amalie_Jensen.pdf"
             download="Signe_Amalie_Jensen_CV.pdf"
             target="_blank"
             rel="noopener"
