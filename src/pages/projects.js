@@ -10,7 +10,7 @@ export function renderProjects(root = "#app"){
     {
       title: "Eksamensprojekt: Udvikling af alkoholfri ølkoncept",
       meta:  "1. semester | 2024",
-      desc:  "Udvikling af visuelt udtryk og UX-flow for et alkoholfrit ølbrand.",
+      desc:  "Udvikling af visuel identitet og UX-flow for et nyt alkoholfrit ølbrand - fra research og koncept til færdigt digitalt produkt.",
       img:   "assets/images/desktopzerobuzz.png",
       href:  "projectdetail.html?id=zerobuzz-brew",
       tags:  ["kodning","adobe","seo","dataindsamling"],
@@ -20,7 +20,7 @@ export function renderProjects(root = "#app"){
     {
       title: "Real life project: Konceptudvikling for eksisterende brand",
       meta:  "2. semester | 2025",
-      desc:  "Koncept, UI-komponenter og mockups for e-commerce.",
+      desc:  "Konceptudvikling og UX-design med fokus på tilgængelighed, struktur og en brugervenlig oplevelse i e-commerce.",
       img:   "assets/images/desktopbasicmore.png",
       href:  "projectdetail.html?id=basic-and-more",
       tags:  ["kodning","dataindsamling"],
@@ -29,7 +29,7 @@ export function renderProjects(root = "#app"){
     {
       title: "Brand identitet: Makeover af eksisterende tøjbrand",
       meta:  "1. semester | 2024",
-      desc:  "Rebranding, typografi og billedstil.",
+      desc:  "Rebranding-projekt med fokus på typografi, billedstil og responsivt design - skabt for at give brandet et moderne og genkendeligt udtryk.",
       img:   "assets/images/desktoppitaya.png",
       href:  "projectdetail.html?id=brand-identity",
       tags:  ["adobe","kodning"],
