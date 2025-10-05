@@ -43,10 +43,6 @@ $btn-raise: 2px !default;
   transform: translate(-50%, -50%);
   white-space: nowrap;
 }
-.btn-cta:hover,
-.btn-cta:focus-visible{
-  transform: translate(-50%, -50%);
-}
 
 // hover-effekt for alle undtagen CTA
 .btn:not(.btn-cta):hover,
