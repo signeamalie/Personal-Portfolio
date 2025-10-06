@@ -27,9 +27,9 @@ export function renderProjects(root = "#app"){
       badge: "Real life samarbejde - Karakter 12"
     },
     {
-      title: "Brand identitet: Makeover af eksisterende tøjbrand",
+      title: "Brandingprojekt: Makeover af eksisterende tøjbrand",
       meta:  "1. semester | 2024",
-      desc:  "Rebranding-projekt med fokus på typografi, billedstil og responsivt design - skabt for at give brandet et moderne og genkendeligt udtryk.",
+      desc:  "Rebranding med fokus på typografi, billedstil og responsivt design - skabt for at give brandet et moderne og genkendeligt udtryk.",
       img:   "assets/images/desktoppitaya.png",
       href:  "projectdetail.html?id=brand-identity",
       tags:  ["adobe","kodning"],
