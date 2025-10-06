@@ -32,7 +32,7 @@ export const projectDetails = {
     intro: "Rebranding-projekt med fokus på udvikling af ny visuel identitet, typografi og billedstil. Målet var at skabe et moderne og genkendeligt brandudtryk med en tydelig visuel rød tråd.",
     slides: [
       { src: "assets/images/pitayalogo.png", alt: "Skitser af Pitaya-logo", caption: "Processen startede med en kreativ brainstorm, hvor jeg udviklede de første idéer til logo og formsprog. Fokus var at skabe et simpelt, men genkendeligt udtryk, der kunne danne grundlag for brandets visuelle identitet." },
-      { src: "assets/images/donepitayalogo.webp", alt: "Endeligt Pitaya-logo", caption: "Det færdige logo blev tegnet og digitaliseret i Adobe Illustrator, hvor jeg forfinede former, farver og balance for at skabe et moderne og harmonisk udtryk." },
+      { src: "assets/images/donepitayalogo.png", alt: "Endeligt Pitaya-logo", caption: "Det færdige logo blev tegnet og digitaliseret i Adobe Illustrator, hvor jeg forfinede former, farver og balance for at skabe et moderne og harmonisk udtryk." },
       { src: "assets/images/rulletekstpitaya.png", alt: "CSS-baseret rullende tekst-banner", caption: "For at tilføje bevægelse og energi til layoutet udviklede jeg et animeret banner i CSS med rullende tekst. Det giver sitet et levende udtryk og fremhæver brandets moderne profil." },
       { src: "assets/images/desktoppitaya.png", alt: "Pitaya - færdigt design", caption: "Det endelige resultat forener minimalisme og kant i et visuelt udtryk, der afspejler brandets moderne og selvsikre identitet." }
     ]

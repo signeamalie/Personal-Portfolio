@@ -13,7 +13,7 @@ export function createNavbar(){
     <div class="nav-pad" aria-hidden="true"></div>
 
     <a class="logo" href="index.html">
-      <img src="assets/images/sajlogo.webp" alt="saj logo" />
+      <img src="assets/images/sajlogo.png" alt="saj logo" />
     </a>
 
     <!-- burger (vises kun på mobil via css) -->

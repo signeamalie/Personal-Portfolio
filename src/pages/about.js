@@ -13,7 +13,7 @@ export function renderAbout(root = "#app"){
 
         <img class="about-portrait"
              loading="lazy"
-             src="assets/images/portrait.webp"
+             src="assets/images/portrait.png"
              alt="Portræt af Signe Amalie Jensen" />
 
         <p class="about-intro">

@@ -23,7 +23,7 @@ export function renderHome(rootSelector = "#app") {
         <a class="btn btn-outline" href="about.html">lær mig bedre at kende</a>
 
         <!-- portræt imellem knapperne -->
-        <img class="portrait" src="assets/images/portrait.webp" alt="portrait af signe" />
+        <img class="portrait" src="assets/images/portrait.png" alt="portrait af signe" />
 
         <!-- sekundær call to action -->
         <a class="btn" href="contact.html">lad os komme i dialog</a>
