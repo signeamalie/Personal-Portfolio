@@ -36,9 +36,5 @@ export function renderHome(rootSelector = "#app") {
         <a class="btn btn-cta" href="projects.html">udforsk mine projekter</a>
       </div>
     </section>
-
-    <!-- ankre til senere sektioner -->
-    <section id="skills" class="anchor-space"></section>
-    <section id="contact" class="anchor-space"></section>
   `;
 }

@@ -19,7 +19,7 @@ export function renderSkills(root = "#app"){
     {
       icon: "fa-solid fa-image",
       title: "Adobe Creative Cloud",
-      text: "Jeg har solid erfaring med Photoshop og Illustrator, som jeg bruger til alt fra logo- og branddesign til visuelle koncepter. Jeg arbejder desuden med After Effects til motion design og prototyper, når der skal skabes ekstra liv og identitet i digitale løsninger."
+      text: "Jeg har solid erfaring med Photoshop, Illustrator og Express, som jeg bruger til alt fra logo- og branddesign til visuelle koncepter. Jeg arbejder desuden med After Effects til motion design og prototyper, når der skal skabes ekstra liv og identitet i digitale løsninger."
     },
   ]);
 
